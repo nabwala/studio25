@@ -150,6 +150,14 @@ body {
     background: var(--white);
 }
 
+.highlights-description {
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+    color: dimgray;
+    margin-bottom: 1rem;
+}
 .highlights-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
