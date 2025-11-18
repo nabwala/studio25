@@ -184,3 +184,24 @@ function preloadImages() {
 
 // Initialize preloading if lazy loading is implemented
 document.addEventListener('DOMContentLoaded', preloadImages);
+
+// Gallery randomization 
+
+document.addEventListener('DOMContentLoaded', function() {
+    const galleryGrid = document.querySelector('.gallery-grid');
+    
+    // Only randomize if gallery exists
+    if (galleryGrid) {
+        const items = Array.from(galleryGrid.children);
+        
+        // Fisher-Yates shuffle algorithm
+        for (let i = items.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [items[i], items[j]] = [items[j], items[i]];
+        }
+        
+        // Clear and re-append in random order
+        galleryGrid.innerHTML = '';
+        items.forEach(item => galleryGrid.appendChild(item));
+    }
+})
