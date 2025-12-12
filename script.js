@@ -205,3 +205,16 @@ document.addEventListener('DOMContentLoaded', function() {
         items.forEach(item => galleryGrid.appendChild(item));
     }
 })
+
+// Mobile hamburger menu toggle
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+
+        // Animate hamburger (optional)
+        hamburger.classList.toggle('active');
+    });
+}
